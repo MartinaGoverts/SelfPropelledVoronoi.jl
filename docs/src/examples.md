@@ -29,13 +29,13 @@ sim_box = SimulationBox(box_Lx, box_Ly)
 # Each parameter is an array of length N, allowing for different properties for each particle if needed.
 # The VoronoiCells struct groups these properties.
 
-# p0: Target perimeter for each particle (Voronoi cell). 
+# P0: Target perimeter for each particle (Voronoi cell). 
 # Cells will experience an elastic force resisting deviations from this preferred perimeter.
 # units: length units, consistent with box_Lx, box_Ly.
-p0 = 3.8 * ones(N) 
+P0 = 3.8 * ones(N) 
 
 # A0: Target area for each particle (Voronoi cell). 
-# Similar to p0, deviations from this preferred area will result in an elastic restoring force.
+# Similar to P0, deviations from this preferred area will result in an elastic restoring force.
 # units:  area units (length units squared).
 A0 = 1.0 * ones(N)
 
@@ -59,7 +59,7 @@ Dr = 0.1 * ones(N)
 
 # particles: Creates a VoronoiCells object to store the collective properties of all particles.
 # The arguments correspond to target_perimeters, target_areas, K_P, K_A, active_force_strengths, and rotational_diffusion_constants respectively.
-particles = VoronoiCells(p0, A0, KP, KA, f0, Dr)
+particles = VoronoiCells(P0, A0, KP, KA, f0, Dr)
 
 # --- Define Simulation Parameters ---
 # params: A ParameterStruct structure holding various global simulation settings and constants.
