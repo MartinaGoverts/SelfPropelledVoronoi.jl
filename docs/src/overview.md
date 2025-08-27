@@ -9,7 +9,7 @@ The behavior of particles in `SelfPropelledVoronoi.jl` is governed by a few key 
 1.  **Voronoi Tessellation:** The simulation space is continuously partitioned into Voronoi cells, with each cell uniquely associated with a particle. The geometry of these cells (area, perimeter, number of neighbors) determines the forces acting on the cells.
 
 2.  **Area and Perimeter Elasticity:**
-    *   Each particle (cell) has a preferred or "target" area (`A0`) and a target perimeter (`p0`).
+    *   Each particle (cell) has a preferred or "target" area (`A0`) and a target perimeter (`P0`).
     *   Deviations from these target values result in an elastic energy penalty. For example, if a cell's actual area `A` is different from `A0`, there is an energy contribution proportional to `KA * (A - A0)^2`, where `KA` is an area stiffness constant. A similar term applies for perimeter deviations with a perimeter stiffness `KP`.
     *   These energy penalties translate into forces that drive the cells to relax towards their target geometries, influencing particle movement and rearrangement.
 
