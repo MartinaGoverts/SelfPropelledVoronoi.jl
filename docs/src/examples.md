@@ -124,6 +124,6 @@ output = Output()
 # --- Run the Simulation ---
 # run_simulation!: This function executes the main simulation loop.
 # It takes the simulation parameters (params), the initial state of particle arrays (arrays),  the output structure (output) and the total number of simulation steps to perform as input. The total simulation time will be dt * N_steps.
-N_steps = 1000, 
+N_steps = 1000; 
 run_simulation!(params, arrays, output, N_steps)
 ```
